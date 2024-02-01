@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pr_12_Mary.MainPage">
+
+    <StackLayout Padding="6" Spacing="6">
+        <ListView
+         x:Name="countryListView"
+         HasUnevenRows="True"
+         ItemSelected="workersList_ItemSelected"
+         ItemsSource="{Binding Countries}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label FontAttributes="Bold" Text="{Binding Name}" />
+                            <Label Text="{Binding Population, StringFormat='Population: {0:N0}'}" />
+                            <Label Text="{Binding Capital}" />
+                            <Label Text="{Binding Currency}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout Background="NavajoWhite"  Padding="4" Spacing="6">
+            <Label
+         x:Name="lbSelectedText"
+         FontSize="14"
+         TextColor="Green" />
+        </StackLayout>
+        <StackLayout Padding="4" Spacing="6">
+
+            <Button
+             Clicked="OnShowPopulationClicked"
+             CornerRadius="18"
+             Text="Показать общее население" />
+            <Button
+             x:Name="btnSave"
+             Clicked="btnSaveItem"
+             CornerRadius="18"
+             Text="Сохранить файл" />
+            <Button
+             x:Name="btnOpen"
+             Clicked="btnOpenItem"
+             CornerRadius="18"
+             Text="Открыть файл" />
+
+            <Button
+             Clicked="OnEditCountryClicked"
+             CornerRadius="18"
+             Text="Редактировть страну" />
+
+            <Button
+             Command="{Binding AddCountryCommand}"
+             CornerRadius="18"
+             Text="Добавить страну" />
+
+            <Button
+             Command="{Binding RemoveCountryCommand}"
+             CornerRadius="18"
+             Text="Удалить страну" />
+
+            <Label FontSize="1" />
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="pr_12_Mary.LockScreenPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Mary">
+    <StackLayout Padding="4" Spacing="6">
+        <Label FontSize="15" Text="Введите пароль, что-бы продолжить... " />
+        <Entry
+            x:Name="passwordEntry"
+            FontSize="20"
+            IsPassword="True" />
+        <Button
+            Clicked="OnUnlockClicked"
+            CornerRadius="18"
+            Text="Разблокировать" />
+    </StackLayout>
+</ContentPage>
